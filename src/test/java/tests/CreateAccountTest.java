@@ -1,5 +1,6 @@
 package tests;
 
+import config.ApplicationManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -45,18 +46,18 @@ public class CreateAccountTest extends BaseTest{
     }
 
     public WebElement getAccountInfoElement() {
-        WebElement accountInfo = driver.findElement(
+        WebElement accountInfo = ApplicationManager.getDriver().findElement(
                 By.xpath("//a[@href='/customer/info' and @class='account']")
         );
         return accountInfo;
     }
 
     public void clickRegisterOnNavBar() {
-        driver.findElement(By.xpath("//a[@href='/register']")).click();
+        ApplicationManager.getDriver().findElement(By.xpath("//a[@href='/register']")).click();
     }
 
     public void typeText(String text, By by) {
-        WebElement element = driver.findElement(by);
+        WebElement element = ApplicationManager.getDriver().findElement(by);
         element.click();
         element.clear();
         element.sendKeys(text);
@@ -78,6 +79,6 @@ public class CreateAccountTest extends BaseTest{
         typeText(Password, By.xpath("//input[@name='ConfirmPassword']"));
     }
     public void clickOnRegisterBtn() {
-        driver.findElement(By.xpath("//input[@name='register-button']")).click();
+        ApplicationManager.getDriver().findElement(By.xpath("//input[@name='register-button']")).click();
     }
 }
