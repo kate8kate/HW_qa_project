@@ -30,7 +30,7 @@ public class BaseTest {
     @AfterSuite
     public void tearDown() { driver.quit(); }
 
-    public void startToLoginBtn() {
+    public void clickOnLoginBtnOnNavBar() {
         driver.findElement(By.xpath("//a[@href='/login']")).click();
     }
 
@@ -59,5 +59,9 @@ public class BaseTest {
         fillEmailOnLogin(email);
         fillPasswordOnLogin(password);
         clickOnLoginBtn();
+    }
+
+    public void navigateToHomePage() {
+        driver.navigate().to("https://demowebshop.tricentis.com/");
     }
 }

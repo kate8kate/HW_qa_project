@@ -10,7 +10,7 @@ public class AddItemToCartTest extends BaseTest{
     @BeforeClass
     public void preconditions() {
 
-        startToLoginBtn();
+        clickOnLoginBtnOnNavBar();
         login(user.getEmail(), user.getPassword());
 
     }

@@ -7,14 +7,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class CreateAccountTest extends BaseTest{
-    @AfterMethod
-    public void methodPostCondition() {
-        navigateToHomePage();
-    }
-
-    public void navigateToHomePage() {
-        driver.navigate().to("https://demowebshop.tricentis.com/");
-    }
 
     @Test
     public void positiveRegistrationTest() {
@@ -31,12 +23,16 @@ public class CreateAccountTest extends BaseTest{
         Assert.assertEquals(actualRes, email);
     }
 
-    private static void pause(int time) {
+    public static void pause(int time) {
         try {
             Thread.sleep(time);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+    @AfterMethod
+    public void methodPostCondition() {
+        navigateToHomePage();
     }
 
     public void registration(String email, String password) {
@@ -58,21 +54,18 @@ public class CreateAccountTest extends BaseTest{
     public void clickRegisterOnNavBar() {
         driver.findElement(By.xpath("//a[@href='/register']")).click();
     }
-    public void clickOnRegisterBtn() {
-        driver.findElement(By.xpath("//input[@name='register-button']")).click();
-    }
-    public void fillFirstnameOnRegistration(String Firstname) {
-        typeText(Firstname, By.xpath("//input[@name='FirstName']"));
-    }
-    public void fillEmailOnRegistration(String Email) {
-        typeText(Email, By.xpath( "//input[@name='Email']"));
-    }
 
     public void typeText(String text, By by) {
         WebElement element = driver.findElement(by);
         element.click();
         element.clear();
         element.sendKeys(text);
+    }
+    public void fillFirstnameOnRegistration(String Firstname) {
+        typeText(Firstname, By.xpath("//input[@name='FirstName']"));
+    }
+    public void fillEmailOnRegistration(String Email) {
+        typeText(Email, By.xpath( "//input[@name='Email']"));
     }
 
     public void fillLastnameOnRegistration(String Lastname) {
@@ -83,5 +76,8 @@ public class CreateAccountTest extends BaseTest{
     }
     public void confirmPasswordOnRegistration(String Password) {
         typeText(Password, By.xpath("//input[@name='ConfirmPassword']"));
+    }
+    public void clickOnRegisterBtn() {
+        driver.findElement(By.xpath("//input[@name='register-button']")).click();
     }
 }
