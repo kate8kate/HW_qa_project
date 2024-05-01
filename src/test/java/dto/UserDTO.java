@@ -4,24 +4,25 @@ public class UserDTO {
     String  email;
     String password;
 
-    public UserDTO(String email, String password) {
-        this.email = email;
-        this.password = password;
+    public UserDTO() {
+
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public UserDTO setEmail(String email) {
         this.email = email;
+        return this;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public UserDTO setPassword(String password) {
         this.password = password;
+        return this;
     }
 }

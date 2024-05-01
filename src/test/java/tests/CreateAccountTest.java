@@ -17,21 +17,26 @@ public class CreateAccountTest extends BaseTest{
     }
 
     @Test
-    public void positiveRegistrationTest() throws InterruptedException {
+    public void positiveRegistrationTest() {
 
         clickRegisterOnNavBar();
         String email = "kmnvljsn1@mnvl.jhn";
         String password = "Qwerty123!";
         registration(email, password);
-
-        // validation-verification by checking account info: //a[@href='/customer/info' and @class='account']
-        // text: jfnwig@jngut3.nvh
         WebElement accountInfo = getAccountInfoElement();
-        Thread.sleep(10000);
+        pause(3000);
         String actualRes = accountInfo.getText().trim();
         System.out.println(actualRes);
 
         Assert.assertEquals(actualRes, email);
+    }
+
+    private static void pause(int time) {
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void registration(String email, String password) {
@@ -57,39 +62,26 @@ public class CreateAccountTest extends BaseTest{
         driver.findElement(By.xpath("//input[@name='register-button']")).click();
     }
     public void fillFirstnameOnRegistration(String Firstname) {
-        WebElement inputFirstname = driver.findElement(By.xpath(
-                "//input[@name='FirstName']"));
-        inputFirstname.click();
-        inputFirstname.clear();
-        inputFirstname.sendKeys(Firstname);
+        typeText(Firstname, By.xpath("//input[@name='FirstName']"));
     }
     public void fillEmailOnRegistration(String Email) {
-        WebElement inputEmail = driver.findElement(By.xpath(
-                "//input[@name='Email']"));
-        inputEmail.click();
-        inputEmail.clear();
-        inputEmail.sendKeys(Email);
+        typeText(Email, By.xpath( "//input[@name='Email']"));
+    }
+
+    public void typeText(String text, By by) {
+        WebElement element = driver.findElement(by);
+        element.click();
+        element.clear();
+        element.sendKeys(text);
     }
 
     public void fillLastnameOnRegistration(String Lastname) {
-        WebElement inputLastname = driver.findElement(By.xpath(
-                "//input[@name='LastName']"));
-        inputLastname.click();
-        inputLastname.clear();
-        inputLastname.sendKeys(Lastname);
+        typeText(Lastname, By.xpath("//input[@name='LastName']"));
     }
     public void fillPasswordOnRegistration(String Password) {
-        WebElement inputPassword = driver.findElement(By.xpath(
-                "//input[@name='Password']"));
-        inputPassword.click();
-        inputPassword.clear();
-        inputPassword.sendKeys(Password);
+        typeText(Password, By.xpath("//input[@name='Password']"));
     }
     public void confirmPasswordOnRegistration(String Password) {
-        WebElement confirmPassword = driver.findElement(By.xpath(
-                "//input[@name='ConfirmPassword']"));
-        confirmPassword.click();
-        confirmPassword.clear();
-        confirmPassword.sendKeys(Password);
+        typeText(Password, By.xpath("//input[@name='ConfirmPassword']"));
     }
 }
