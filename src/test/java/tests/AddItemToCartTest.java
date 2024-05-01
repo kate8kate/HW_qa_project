@@ -1,13 +1,11 @@
 package tests;
 
-import config.ApplicationManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class AddItemToCartTest extends BaseTest{
+public class AddItemToCartTest extends BaseTest {
     @BeforeClass
     public void preconditions() {
 
@@ -28,6 +26,4 @@ public class AddItemToCartTest extends BaseTest{
         Assert.assertEquals(actualRes, "14.1-inch Laptop");
 
     }
-
-
 }

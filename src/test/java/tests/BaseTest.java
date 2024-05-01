@@ -2,8 +2,6 @@ package tests;
 
 import config.ApplicationManager;
 import dto.UserDTO;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.Browser;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -22,8 +20,5 @@ public class BaseTest {
     @AfterSuite
     public void tearDown() {
         app.quit();
-
     }
-
-
 }

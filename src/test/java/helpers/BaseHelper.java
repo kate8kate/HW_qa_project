@@ -1,6 +1,5 @@
 package helpers;
 
-import config.ApplicationManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,7 +18,7 @@ public class BaseHelper {
         }
     }
     public void typeText(String text, By by) {
-        WebElement element = ApplicationManager.getDriver().findElement(by);
+        WebElement element = driver.findElement(by);
         element.click();
         element.clear();
         element.sendKeys(text);

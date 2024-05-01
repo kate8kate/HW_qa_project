@@ -1,13 +1,11 @@
 package tests;
 
-import config.ApplicationManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-public class CreateAccountTest extends BaseTest{
+public class CreateAccountTest extends BaseTest {
 
     @Test
     public void positiveRegistrationTest() {
@@ -23,7 +21,6 @@ public class CreateAccountTest extends BaseTest{
 
         Assert.assertEquals(actualRes, email);
     }
-
 
     @AfterMethod
     public void methodPostCondition() {
