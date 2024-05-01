@@ -3,7 +3,7 @@
 <suite name="Smoke" verbose="1">
     <test name="Smoke">
         <classes>
-            <class name="tests.AddItemToCart"/>
+            <class name="tests.AddItemToCartTest"/>
             <class name="tests.CreateAccountTest"/>
         </classes>
     </test>

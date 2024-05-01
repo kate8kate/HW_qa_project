@@ -10,17 +10,23 @@ public class BaseHelper {
     public BaseHelper(WebDriver driver) {
         this.driver = driver;
     }
-    public static void pause(int time) {
+
+    public WebElement getTextBaseByLocator(By by) {
+        return driver.findElement(by);
+
+    }
+
+    protected void typeText(String text, By by) {
+        WebElement element = getTextBaseByLocator(by);
+        element.click();
+        element.clear();
+        element.sendKeys(text);
+    }
+    public void pause(int time) {
         try {
             Thread.sleep(time);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-    }
-    public void typeText(String text, By by) {
-        WebElement element = driver.findElement(by);
-        element.click();
-        element.clear();
-        element.sendKeys(text);
     }
 }

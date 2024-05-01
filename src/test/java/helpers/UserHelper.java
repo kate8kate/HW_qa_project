@@ -43,7 +43,7 @@ public class UserHelper extends BaseHelper{
     }
 
     public void clickRegisterOnNavBar() {
-        driver.findElement(By.xpath("//a[@href='/register']")).click();
+        driver.findElement(By.xpath("//a[@href='/register'and @class='ico-register']")).click();
     }
 
     public void fillFirstnameOnRegistration(String Firstname) {
