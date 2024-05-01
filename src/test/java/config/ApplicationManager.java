@@ -1,6 +1,7 @@
 package config;
 
 import helpers.CartHelper;
+import helpers.HomePageHelper;
 import helpers.UserHelper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -12,8 +13,13 @@ import java.time.Duration;
 public class ApplicationManager {
     static WebDriver driver;
     String browser;
+    HomePageHelper homePageHelper;
     UserHelper userHelper;
     CartHelper cartHelper;
+
+    public HomePageHelper getHomePageHelper() {
+        return homePageHelper;
+    }
 
     public UserHelper getUserHelper() {
         return userHelper;
