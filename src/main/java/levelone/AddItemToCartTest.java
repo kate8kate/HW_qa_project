@@ -1,6 +1,5 @@
 package levelone;
 
-import dto.UserDTO;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -13,8 +12,7 @@ public class AddItemToCartTest extends BaseTest {
         // TODO login
 
         startToLoginBtn();
-        UserDTO user = new UserDTO("kmnvljsn@mnvl.jhn", "Qwerty123!");
-        login(user.getEmail(), user.getPassword());
+        login("kmnvljsn@mnvl.jhn", "Qwerty123!");
 
     }
 
