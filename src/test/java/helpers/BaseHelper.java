@@ -15,6 +15,13 @@ public class BaseHelper {
         return driver.findElement(by);
 
     }
+    public void typeText(String xpathExpression, String Password) {
+        WebElement element = driver.findElement(By
+                .xpath(xpathExpression));
+        element.click();
+        element.clear();
+        element.sendKeys(Password);
+    }
 
     protected void typeText(String text, By by) {
         WebElement element = getTextBaseByLocator(by);

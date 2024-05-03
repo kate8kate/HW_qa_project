@@ -8,7 +8,12 @@ public class CartHelper extends BaseHelper {
     public CartHelper(WebDriver driver) {
         super(driver);
     }
-
+    /*public boolean isSerNumberDisplays(String serialNumberStr) {
+    serNum = serialNumberStr;
+    return isElementExist(serNumber);
+}
+    public String getTextCart(WebElement element) {
+лучше сделать базовые методы по поиску элемента и получению текста в бейс хелпере*/
     public String getTextCart(WebElement element) {
         return element.getText().trim();
     }

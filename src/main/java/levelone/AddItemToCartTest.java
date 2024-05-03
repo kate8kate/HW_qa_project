@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class AddItemToCartTest extends BaseTest {
 //    @BeforeClass
 //    public void preconditions() {
-//        // TODO login
+//
 //
 //        startToLoginBtn();
 //        login("kmnvljsn@mnvl.jhn", "Qwerty123!");

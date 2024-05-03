@@ -19,7 +19,7 @@ dependencies {
 
 test {
     useTestNG()
-    task qa(type: Test) {
+    task qa(type: Test) {  //gradle clean qa  //gradle Pbrowser=chrome clean qa  //gradle -Psuite1 clean qa
         useTestNG() {
             def suite1 = project.hasProperty("suite1")
             if (project.hasProperty("browser")) {

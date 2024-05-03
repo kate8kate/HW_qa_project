@@ -39,12 +39,13 @@ public class ApplicationManager {
 
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.navigate().to("https://demowebshop.tricentis.com/");
 
         userHelper = new UserHelper(driver);
         cartHelper = new CartHelper(driver);
+        homePageHelper = new HomePageHelper(driver);
     }
 
     public void quit() {

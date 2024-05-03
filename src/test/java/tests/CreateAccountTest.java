@@ -18,7 +18,6 @@ public class CreateAccountTest extends BaseTest {
         app.getHomePageHelper().pause(3000);
         String actualRes = accountInfo.getText().trim();
         System.out.println(actualRes);
-
         Assert.assertEquals(actualRes, email);
     }
 
