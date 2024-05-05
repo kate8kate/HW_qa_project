@@ -5,6 +5,7 @@
         <classes>
             <class name="tests.AddItemToCartTest"/>
             <class name="tests.CreateAccountTest"/>
+            <class name="tests.AddNewUserTest"/>
         </classes>
     </test>
 

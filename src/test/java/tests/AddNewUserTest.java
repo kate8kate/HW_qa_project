@@ -20,7 +20,7 @@ public class AddNewUserTest extends BaseTest{
                 .setPassword(password);
         app.getUserHelper().getAccountInfoElement();
         app.getHomePageHelper().pause(2000);
-        String actualRes = accountInfo.getText().trim();
+        String actualRes = app.getUserHelper().getAccountInfoElement().getText().trim();
         Assert.assertEquals(actualRes, email);
     }
 
