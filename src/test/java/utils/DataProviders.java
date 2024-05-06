@@ -1,14 +1,15 @@
 package utils;
 
 import dto.UserDTO;
+import org.testng.annotations.DataProvider;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class DataProvider {
-    @org.testng.annotations.DataProvider
+public class DataProviders {
+    @DataProvider
     public Iterator<Object[]> addNewUser() {
         List<Object[]> list = new ArrayList<>();
         list.add(new Object[]{"Julia", "Smith", "some@mail.com", "password123"});
@@ -17,7 +18,7 @@ public class DataProvider {
         return list.iterator();
     }
 
-    @org.testng.annotations.DataProvider
+    @DataProvider
     public Iterator<Object[]> userDataCSVFile() {
         List<Object[]> list = new ArrayList<>();
         String line = "";

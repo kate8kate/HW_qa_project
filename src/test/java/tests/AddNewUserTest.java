@@ -2,14 +2,14 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import dto.UserDTO;
+import utils.DataProviders;
 
 
 public class AddNewUserTest extends BaseTest{
 
-    @Test(dataProvider = "addNewUser", dataProviderClass = DataProvider.class)
+    @Test(dataProvider = "addNewUser", dataProviderClass = DataProviders.class)
     public void positiveRegistrationUser(String firstName, String lastName, String email, String password) {
 
         app.getUserHelper().clickRegisterOnNavBar();
